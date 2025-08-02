@@ -462,23 +462,11 @@ src="https://www.facebook.com/tr?id=482675157669768&ev=PageView&noscript=1"
             position: absolute;
             top: 5px;
             right: 5px;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.15rem 0.3rem;
-            border-radius: 10px;
-            font-size: 0.325rem;
-            font-weight: 600;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-        }
-        .stock-out-overlay {
-            position: absolute;
-            top: 5px;
-            right: 5px;
             background-color: #e74c3c;
             color: white;
-            padding: 0.15rem 0.3rem;
-            border-radius: 10px;
-            font-size: 0.325rem;
+            padding: 0.2rem 0.4rem;
+            border-radius: 6px;
+            font-size: 0.6rem;
             font-weight: 600;
             box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
@@ -1280,6 +1268,10 @@ src="https://www.facebook.com/tr?id=482675157669768&ev=PageView&noscript=1"
             .product-card-header h3 {
                 font-size: 0.9rem;
                 line-height: 1.3;
+            }
+            .stock-badge {
+                font-size: 0.5rem;
+                padding: 0.15rem 0.3rem;
             }
         }
 
@@ -3443,13 +3435,8 @@ Microsoft-এর অফিসিয়াল Activation Key, ইমেইলে ড
             if (product.stock > 0) {
                 const stockBadge = document.createElement('div');
                 stockBadge.className = 'stock-badge';
-                stockBadge.textContent = 'Stock';
+                stockBadge.textContent = 'Stock Out';
                 imageContainer.appendChild(stockBadge);
-            } else if (product.stock === 0) {
-                const stockOutOverlay = document.createElement('div');
-                stockOutOverlay.className = 'stock-out-overlay';
-                stockOutOverlay.textContent = 'Stock Out';
-                imageContainer.appendChild(stockOutOverlay);
             }
             let buttonsHTML = isFeaturedCard ? `<button class="view-details-card full-width-button">View Details</button>` : `<button class="buy-now-card">Buy Now</button><button class="view-details-card">View Details</button>`;
             
